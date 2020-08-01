@@ -42,3 +42,4 @@ if(CH_BUILD_TESTS)
     add_test("affine" affine)
     add_test("atbash" atbash)
 endif()
+

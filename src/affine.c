@@ -6,7 +6,6 @@ char *affine_encrypt(char *text, int a, int b)
     size_t textlen = strlen(text);
 
     char *encrypted = malloc(textlen);
-    char encrypted_c[textlen];
 
     for (int i = 0; i < (int)textlen; i++)
     {
@@ -23,9 +22,8 @@ char *affine_encrypt(char *text, int a, int b)
             encc = (a * (x - 97) + b) % 26 + 97;
         }
 
-        encrypted_c[i] = encc;
+        encrypted[i] = encc;
     }
-    strncpy(encrypted, encrypted_c, textlen);
     return encrypted;
 }
 
@@ -34,7 +32,6 @@ char *affine_decrypt(char *text, int a, int b)
     size_t textlen = strlen(text);
 
     char *decrypted = malloc(textlen);
-    char decrypted_c[textlen];
 
     int _a = 26 - a;
 
@@ -53,8 +50,7 @@ char *affine_decrypt(char *text, int a, int b)
             decc = 26 - (abs(decc) % 26) + 97;
         }
 
-        decrypted_c[i] = (char)decc;
+        decrypted[i] = (char)decc;
     }
-    strncpy(decrypted, decrypted_c, textlen);
     return decrypted;
 }
