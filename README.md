@@ -10,7 +10,7 @@ C library for ciphers and encoders.
 - bacon
 - caesar
 - base64
-
+- rot13
 
 ## Installation
 ```sh
