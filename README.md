@@ -1,4 +1,7 @@
 # cipherhouse ![build status](https://github.com/GrbavaCigla/cipherhouse/workflows/C/C++%20CI/badge.svg)
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3911916cac264460a4b0ebaa82e7fa6c)](https://app.codacy.com/manual/GrbavaCigla/cipherhouse?utm_source=github.com&utm_medium=referral&utm_content=GrbavaCigla/cipherhouse&utm_campaign=Badge_Grade_Dashboard)
+
 C library for ciphers and encoders.
 
 ## Installation
