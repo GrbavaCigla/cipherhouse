@@ -4,7 +4,7 @@
 
 C library for ciphers and encoders.
 
-## Support ciphers
+## Support ciphers (and codes)
 - affine
 - atbash
 - bacon
