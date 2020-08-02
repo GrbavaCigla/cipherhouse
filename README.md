@@ -1,4 +1,4 @@
-# cipherhouse
+# cipherhouse ![build status](https://github.com/GrbavaCigla/cipherhouse/workflows/C/C++%20CI/badge.svg)
 C library for ciphers and encoders.
 
 ## Installation
