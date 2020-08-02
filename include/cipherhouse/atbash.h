@@ -4,5 +4,5 @@
 
 #pragma once
 
-char *atbash_encrypt(char *text);
-char *atbash_decrypt(char *text);
+unsigned char *atbash_encrypt(const char *text);
+unsigned char *atbash_decrypt(const char *text);

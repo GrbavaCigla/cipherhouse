@@ -1,7 +1,7 @@
 #include "cipherhouse/affine.h"
 #include "cipherhouse/common.h"
 
-char *affine_encrypt(char *text, int a, int b)
+unsigned char *affine_encrypt(const char *text, int a, int b)
 {
     size_t textlen = strlen(text);
 
@@ -27,7 +27,7 @@ char *affine_encrypt(char *text, int a, int b)
     return encrypted;
 }
 
-char *affine_decrypt(char *text, int a, int b)
+unsigned char *affine_decrypt(const char *text, int a, int b)
 {
     size_t textlen = strlen(text);
 

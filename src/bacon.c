@@ -1,6 +1,6 @@
 #include "cipherhouse/bacon.h"
 
-char *bacon_encrypt(const char *text)
+unsigned char *bacon_encrypt(const char *text)
 {
     size_t textlen = strlen(text);
     char *encrypted = malloc(textlen * 5);
@@ -15,7 +15,7 @@ char *bacon_encrypt(const char *text)
     return encrypted;
 }
 
-char *bacon_decrypt(const char *text)
+unsigned char *bacon_decrypt(const char *text)
 {
     size_t textlen = strlen(text);
     char *decrypted = malloc(textlen / 5);

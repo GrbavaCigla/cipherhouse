@@ -11,7 +11,8 @@ enable_testing()
 
 set(CMAKE_C_STANDARD 99)
 
-set(CH_BUILD_SHARED_LIBS ON)
+set(BUILD_SHARED_LIBS ON)
+set(BUILD_STATIC_LIBS ON)
 set(CH_BUILD_TESTS ON)
 set(CMAKE_BUILD_TYPE Release)
 
@@ -44,19 +45,21 @@ if(CH_BUILD_TESTS)
     add_executable(atbash tests/atbash.c)
     add_executable(bacon tests/bacon.c)
     add_executable(base64 tests/base64.c)
-
+    add_executable(caesar tests/caesar.c)
 
     target_link_libraries(affine ${PROJECT_NAME})
     target_link_libraries(atbash ${PROJECT_NAME})
     target_link_libraries(bacon ${PROJECT_NAME})
     target_link_libraries(base64 ${PROJECT_NAME})
-
+    target_link_libraries(caesar ${PROJECT_NAME})
 
     add_test("affine" affine)
     add_test("atbash" atbash)
     add_test("bacon" bacon)
     add_test("base64" base64)
-
+    add_test("caesar" caesar)
 endif()
 
 target_link_libraries(${PROJECT_NAME} b64)
+
+install(TARGETS b64 ${PROJECT_NAME})

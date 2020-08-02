@@ -4,5 +4,5 @@
 
 #pragma once
 
-char *affine_encrypt(char *text, int a, int b);
-char *affine_decrypt(char *text, int a, int b);
+unsigned char *affine_encrypt(const char *text, int a, int b);
+unsigned char *affine_decrypt(const char *text, int a, int b);

@@ -4,5 +4,5 @@
 
 #pragma once
 
-char *bacon_encrypt(const char *text);
-char *bacon_decrypt(const char *text);
+unsigned char *bacon_encrypt(const char *text);
+unsigned char *bacon_decrypt(const char *text);

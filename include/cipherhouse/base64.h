@@ -3,5 +3,7 @@
 #include <string.h>
 #include "b64.h"
 
-unsigned char *base64_encrypt(const char *text);
+#pragma once
+
+char *base64_encrypt(const char *text);
 unsigned char *base64_decrypt(const char *text);

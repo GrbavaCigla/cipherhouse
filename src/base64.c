@@ -1,6 +1,6 @@
 #include "cipherhouse/base64.h"
 
-unsigned char *base64_encrypt(const char *text)
+char *base64_encrypt(const char *text)
 {
     return b64_encode(text, strlen(text));
 }
