@@ -1,0 +1,43 @@
+Alberti
+Bazeries
+Bellaso
+Chaocipher
+Gronsfeld
+Jefferson wheel
+Phillips
+Trithemius
+Vernam
+Vigenere
+Caesar
+-Atbash
+ROT13
+-Affine
+Polybius
+Bifid
+Bacon
+ADFGVX
+ADFGX
+AMSCO
+Alphabetic disordering
+Caesar box
+Double transposition
+Re defense
+Scytale
+Spiral
+Transposition
+Rail fence
+Auto key
+Beaufort
+Porta
+Hill
+Trifid
+Collon
+Digrafid
+Foursquare
+Morbit
+Playfair
+Pollux
+Three square
+Two square
+Stream cipher
+Block cipher

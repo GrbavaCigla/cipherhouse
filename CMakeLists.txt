@@ -33,13 +33,15 @@ target_include_directories(${PROJECT_NAME}
 if(CH_BUILD_TESTS)
     add_executable(affine tests/affine.c)
     add_executable(atbash tests/atbash.c)
-
+    add_executable(bacon tests/bacon.c)
 
     target_link_libraries(affine ${PROJECT_NAME})
     target_link_libraries(atbash ${PROJECT_NAME})
-
+    target_link_libraries(bacon ${PROJECT_NAME})
 
     add_test("affine" affine)
     add_test("atbash" atbash)
+    add_test("bacon" bacon)
+
 endif()
 

@@ -1,6 +1,6 @@
-#include "cipherhouse/baconian.h"
+#include "cipherhouse/bacon.h"
 
-char *baconian_encrypt(const char *text)
+char *bacon_encrypt(const char *text)
 {
     size_t textlen = strlen(text);
     char *encrypted = malloc(textlen * 5);
@@ -15,16 +15,28 @@ char *baconian_encrypt(const char *text)
     return encrypted;
 }
 
-char *baconian_decrypt(const char *text)
+char *bacon_decrypt(const char *text)
 {
     size_t textlen = strlen(text);
     char *decrypted = malloc(textlen / 5);
 
-    for (int i = 0; i < (int)textlen; i += 5)
+    for (int i = 0; i < (int)textlen; i++)
     {
-        for (int j = 4; j >= 0; j--)
+        char temp[5];
+        if (text[i] == 'a')
         {
+            temp[i % 5] = '0';
+        }
+        else
+        {
+            temp[i % 5] = '1';
+        }
+
+        if (i % 5 == 4)
+        {
+            decrypted[i / 5] = strtol(temp, 0, 2) + 97;
         }
     }
+
     return decrypted;
 }
