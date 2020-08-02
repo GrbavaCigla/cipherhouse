@@ -20,10 +20,19 @@ file(GLOB SRC
     "src/*.c"
 )
 
-
 add_library(
     ${PROJECT_NAME}
     ${SRC}
+)
+
+add_library(
+    b64
+    "${PROJECT_SOURCE_DIR}/vendor/b64/encode.c"
+    "${PROJECT_SOURCE_DIR}/vendor/b64/decode.c"
+    "${PROJECT_SOURCE_DIR}/vendor/b64/buffer.c"
+)
+target_include_directories(b64
+    PUBLIC ${PROJECT_SOURCE_DIR}/vendor/b64
 )
 
 target_include_directories(${PROJECT_NAME}
@@ -34,14 +43,20 @@ if(CH_BUILD_TESTS)
     add_executable(affine tests/affine.c)
     add_executable(atbash tests/atbash.c)
     add_executable(bacon tests/bacon.c)
+    add_executable(base64 tests/base64.c)
+
 
     target_link_libraries(affine ${PROJECT_NAME})
     target_link_libraries(atbash ${PROJECT_NAME})
     target_link_libraries(bacon ${PROJECT_NAME})
+    target_link_libraries(base64 ${PROJECT_NAME})
+
 
     add_test("affine" affine)
     add_test("atbash" atbash)
     add_test("bacon" bacon)
+    add_test("base64" base64)
 
 endif()
 
+target_link_libraries(${PROJECT_NAME} b64)

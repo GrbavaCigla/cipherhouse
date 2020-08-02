@@ -1,0 +1,3 @@
+[submodule "vendor/b64"]
+	path = vendor/b64
+	url = https://github.com/littlstar/b64.c
