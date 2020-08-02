@@ -31,7 +31,8 @@ int main(){
 }
 ```
 ## API
-Every algorithm has `encrypt` and `decrypt` function, no matter if it is encoding (example: base64)or only has encrypt (example: atbash), this is done because I want api to be consitant and easy to use
+Every algorithm has `encrypt` and `decrypt` function, no matter if it is encoding (example: base64) or only has encrypt (example: atbash), this is done because I want api to be consitant and easy to use  
+___string must be null terminated___
 
 ## License
 This project is licensed under GPLv3
