@@ -4,6 +4,14 @@
 
 C library for ciphers and encoders.
 
+## Support ciphers
+- affine
+- atbash
+- bacon
+- caesar
+- base64
+
+
 ## Installation
 ```sh
 git clone --recursive https://github.com/GrbavaCigla/cipherhouse.git
