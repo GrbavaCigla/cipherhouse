@@ -1,8 +1,7 @@
 #include "cipherhouse/bacon.h"
 
-unsigned char *bacon_encrypt(const char *text)
+unsigned char *bacon_n_encrypt(const char *text, size_t textlen)
 {
-    size_t textlen = strlen(text);
     char *encrypted = malloc(textlen * 5);
 
     for (int i = 0; i < (int)textlen; i++)
@@ -15,9 +14,8 @@ unsigned char *bacon_encrypt(const char *text)
     return encrypted;
 }
 
-unsigned char *bacon_decrypt(const char *text)
+unsigned char *bacon_n_decrypt(const char *text, size_t textlen)
 {
-    size_t textlen = strlen(text);
     char *decrypted = malloc(textlen / 5);
 
     for (int i = 0; i < (int)textlen; i++)
@@ -39,4 +37,14 @@ unsigned char *bacon_decrypt(const char *text)
     }
 
     return decrypted;
+}
+
+unsigned char *bacon_encrypt(const char *text) {
+    size_t textlen = strlen(text);
+    return bacon_n_encrypt(text, textlen);
+}
+
+unsigned char *bacon_decrypt(const char *text) {
+    size_t textlen = strlen(text);
+    return bacon_n_decrypt(text, textlen);
 }
