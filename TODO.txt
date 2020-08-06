@@ -8,13 +8,13 @@ Phillips
 Trithemius
 Vernam
 Vigenere
-Caesar
+-Caesar
 -Atbash
-ROT13
+-ROT13
 -Affine
 Polybius
 Bifid
-Bacon
+-Bacon
 ADFGVX
 ADFGX
 AMSCO
