@@ -30,7 +30,7 @@ First include cipher you want:
 #include <cipherhouse/atbash>
 ```
 
-Then encode your string:
+Then 'encrypt' your string:
 ```c
 #include <stdio.h>
 
@@ -38,9 +38,46 @@ int main(){
   printf("%s", atbash_encrypt("atbashcipher"));
 }
 ```
-## API
-Every algorithm has `encrypt` and `decrypt` function, no matter if it is encoding (example: base64) or only has encrypt (example: atbash), this is done because I want api to be consitant and easy to use  
-___string must be null terminated___ (This will soon be changed with `[cipher]_n_encrypt` nad `[cipher]_n_decrypt`)
+Non-terminated strings (WIP):
+```c
+#include <stdio.h>
+
+int main(){
+  char mystring[] = {'a', 'f', 'f', 'i', 'n', 'e', 'c', 'i', 'p', 'h', 'e', 'r'};
+  printf("%s", atbash_n_encrypt(mystring, 12));
+}
+```
+
+## Documentation
+Every cipher has `encrypt` and `decrypt` function, no matter if it is encoding (example: base64) or only has encrypt (example: atbash), this is done because I want api to be consitant and easy to use.
+List of functions:
+```c
+unsigned char *caesar_encrypt(const char *text, int n);
+unsigned char *caesar_decrypt(const char *text, int n);
+unsigned char *caesar_n_encrypt(const char *text, size_t textlen, int n);
+unsigned char *caesar_n_decrypt(const char *text, size_t textlen, int n);
+unsigned char *atbash_encrypt(char *text);
+unsigned char *atbash_decrypt(char *text);
+unsigned char *atbash_n_encrypt(char *text, size_t textlen);
+unsigned char *atbash_n_decrypt(char *text, size_t textlen);
+unsigned char *affine_encrypt(const char *text, int a, int b);
+unsigned char *affine_decrypt(const char *text, int a, int b);
+unsigned char *affine_n_encrypt(const char *text, size_t textlen, int a, int b);
+unsigned char *affine_n_decrypt(const char *text, size_t textlen, int a, int b);
+unsigned char *bacon_n_encrypt(const char *text, size_t textlen);
+unsigned char *bacon_n_decrypt(const char *text, size_t textlen);
+unsigned char *bacon_encrypt(const char *text);
+unsigned char *bacon_decrypt(const char *text);
+char *base64_encrypt(const char *text);
+unsigned char *base64_decrypt(const char *text);
+char *base64_n_encrypt(const char *text, size_t textlen);
+unsigned char *base64_n_decrypt(const char *text, size_t textlen);
+unsigned char *rot13_encrypt(const char *text);
+unsigned char *rot13_decrypt(const char *text);
+unsigned char *rot13_n_encrypt(const char *text, size_t textlen);
+unsigned char *rot13_n_decrypt(const char *text, size_t textlen);
+
+```
 
 ## License
 This project is licensed under GPLv3
