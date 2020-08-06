@@ -27,7 +27,7 @@ make install    # Not yet implemented
 
 First include cipher you want:
 ```c
-#include <cipherhouse/atbash>
+#include <cipherhouse/atbash.h>
 ```
 
 Then 'encrypt' your string:
