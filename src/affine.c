@@ -28,7 +28,8 @@ unsigned char* affine_n_encrypt(const char* text, size_t textlen, int a,
 
         if (typet == -1) {
             encc = (a * (x - 65) + b) % 26 + 65;
-        } else if (typet == 0) {
+        }
+        else if (typet == 0) {
             encc = (a * (x - 97) + b) % 26 + 97;
         }
 
@@ -51,7 +52,8 @@ unsigned char* affine_n_decrypt(const char* text, size_t textlen, int a,
 
         if (decc >= 0) {
             decc = decc % 26 + 97;
-        } else {
+        }
+        else {
             decc = 26 - (abs(decc) % 26) + 97;
         }
 
