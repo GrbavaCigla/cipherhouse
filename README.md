@@ -77,6 +77,10 @@ unsigned char *rot13_encrypt(const char *text);
 unsigned char *rot13_decrypt(const char *text);
 unsigned char *rot13_n_encrypt(const char *text, size_t textlen);
 unsigned char *rot13_n_decrypt(const char *text, size_t textlen);
+unsigned char* vigenere_encrypt(const char* text, const char* key);
+unsigned char* vigenere_decrypt(const char* text, const char* key);
+unsigned char* vigenere_n_decrypt(const char* text, const char* key, size_t textlen, size_t keylen);
+unsigned char* vigenere_n_encrypt(const char* text, const char* key, size_t textlen, size_t keylen);
 
 ```
 
