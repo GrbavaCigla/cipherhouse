@@ -1,4 +1,5 @@
 #include "cipherhouse/vigenere.h"
+#include "cipherhouse/common.h"
 
 unsigned char *vigenere_encrypt(const char *text, const char *key)
 {
@@ -20,7 +21,8 @@ unsigned char *vigenere_encrypt(const char *text, const char *key)
         int typet = typetxt(x);
         char encc = x;
 
-        if (typet != 1) {
+        if (typet != 1)
+        {
             int offset = typet == 0 ? 'a' : 'A';
             encc = (x - offset + y) % 26 + offset;
         }
@@ -38,8 +40,20 @@ unsigned char *vigenere_decrypt(const char *text, const char *key)
 
     for (int i = 0; i < (int)textlen; i++)
     {
+        int x = text[i];
         int y = key[i % keylen];
+        int decc = x;
+        int typet = typetxt(x);
         int typek = typetxt(y);
+
+        if (typet != 1 && typek != 1)
+        {
+            int offset = typet == 0 ? 'a' : 'A';
+            int offsek = typek == 0 ? 'a' : 'A';
+
+            decc = x - offset - y + offsek;
+            decc = mod(decc, 26) + offset;
+        }
 
         decrypted[i] = (char)decc;
     }
