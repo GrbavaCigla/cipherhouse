@@ -4,10 +4,10 @@
 
 int main()
 {
-    int encmsg = strcmp("zyxwvutsrqponmlkjihgfedcba", atbash_encrypt("abcdefghijklmnopqrstuvwxyz"));
-    int decmsg = strcmp("abcdefghijklmnopqrstuvwxyz", atbash_decrypt("zyxwvutsrqponmlkjihgfedcba"));
-    int nencmsg = strcmp("zyxwvutsrqponmlkjihgfedcba", atbash_n_encrypt("abcdefghijklmnopqrstuvwxyz", 26));
-    int ndecmsg = strcmp("abcdefghijklmnopqrstuvwxyz", atbash_n_decrypt("zyxwvutsrqponmlkjihgfedcba", 26));
+    int u_encmsg = strcmp("ZYXWVUTSRQPONMLKJIHGFEDCBA", atbash_encrypt("ABCDEFGHIJKLMNOPQRSTUVWXYZ"));
+    int u_decmsg = strcmp("ABCDEFGHIJKLMNOPQRSTUVWXYZ", atbash_decrypt("ZYXWVUTSRQPONMLKJIHGFEDCBA"));
+    int l_encmsg = strcmp("zyxwvutsrqponmlkjihgfedcba", atbash_encrypt("abcdefghijklmnopqrstuvwxyz"));
+    int l_decmsg = strcmp("abcdefghijklmnopqrstuvwxyz", atbash_decrypt("zyxwvutsrqponmlkjihgfedcba"));
 
-    return decmsg || encmsg || nencmsg || ndecmsg;
+    return u_encmsg || u_decmsg || l_encmsg || l_decmsg;
 }
