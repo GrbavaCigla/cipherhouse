@@ -66,3 +66,8 @@ endif()
 target_link_libraries(${PROJECT_NAME} b64)
 
 install(TARGETS b64 ${PROJECT_NAME})
+install(
+    DIRECTORY ${CMAKE_SOURCE_DIR}/include/
+    DESTINATION include
+    FILES_MATCHING PATTERN "*.h"
+)
