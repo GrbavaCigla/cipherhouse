@@ -18,9 +18,9 @@ unsigned char* bacon_n_decrypt(const char* text, size_t textlen)
 
     for (int i = 0; i < (int)textlen; i++) {
         char temp[5];
-        if (text[i] == 'a') {
+        if (text[i] == 'a' || text[i] == 'A') {
             temp[i % 5] = '0';
-        } else {
+        } else if (text[i] == 'b' || text[i] == 'B') {
             temp[i % 5] = '1';
         }
 
