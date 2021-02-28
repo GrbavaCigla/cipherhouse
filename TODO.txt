@@ -7,7 +7,7 @@ Jefferson wheel
 Phillips
 Trithemius
 Vernam
-Vigenere
+-Vigenere
 -Caesar
 -Atbash
 -ROT13

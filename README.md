@@ -11,6 +11,7 @@ C library for ciphers and encoders.
 - caesar
 - base64
 - rot13
+- vigenere
 
 ## Installation
 ```sh
